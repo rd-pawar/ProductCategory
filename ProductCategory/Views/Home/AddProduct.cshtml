@@ -1,0 +1,25 @@
+﻿@model ProductCategory.Models.AddProductViewModel
+
+@{
+    List<string> Categorylist = new List<string>();
+    foreach (string ct in Model.LCategory)
+    {
+        Categorylist.Add(ct);
+    }
+}
+<h1>Add Product</h1>
+<form method="post" action="AddProduct" class="mt-5">
+    <div class="mb-3">
+        <label for="" class="form-lable">Category Name</label>
+        @Html.DropDownListFor(model => model.Categories, new SelectList(Categorylist))
+        @*<input type="text" class="form-control" asp-for="Category.Category">*@
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-lable">Product Name</label>
+        <input type="text" class="form-control" asp-for="ProductName">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+
+

@@ -1,0 +1,19 @@
+﻿    @model ProductCategory.Models.ProductDetails
+@{
+}
+<h1>Update Product</h1>
+<form method="post" action="View" class="mt-5">
+    <div class="mb-3">
+        <label for="" class="form-lable">Product ID</label>
+        <input type="text" class="form-control" asp-for="Id" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-lable">Product Name</label>
+        <input type="text" class="form-control" asp-for="ProductName">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-danger"
+            asp-action="DeleteProduct" asp-controller="Home">
+        Delete
+    </button>
+</form> 
